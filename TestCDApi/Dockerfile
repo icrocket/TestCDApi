@@ -4,11 +4,11 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
-#WORKDIR /src
+WORKDIR /src
 COPY ["TestCDApi/TestCDApi.csproj", "TestCDApi/"]
 RUN dotnet restore "TestCDApi/TestCDApi.csproj"
 COPY . .
-#WORKDIR "/src/TestCDApi"
+WORKDIR "/src/TestCDApi"
 RUN dotnet build "TestCDApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
