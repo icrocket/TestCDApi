@@ -19,7 +19,7 @@ namespace TestCDApi.Controllers
         [HttpGet]
         public string Get()
         {
-            return "Ciao Randazzo 1";
+            return "Ciao Randazzo 2";
         }
     }
 }
